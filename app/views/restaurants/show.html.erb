@@ -1,0 +1,21 @@
+<div class="container">
+  <h2><%= @restaurant.name %></h2>
+  <p>Address: <%= @restaurant.address %></p>
+  <p>Category: <%= @restaurant.category%></p>
+  <p>Phone number: <%= @restaurant.phone_number %></p>
+</div>
+
+<div class="container">
+  <h5>Add a review</h5>
+  <small><%= form_for [@restaurant, @review] do |f| %>
+    <div><%= f.label :rating %></div>
+    <div><%= f.number_field :rating %></div>
+    <div><%= f.label :content %></div>
+    <div><%= f.text_field :content %></div>
+    <div><%= f.submit %></div>
+  <% end %>
+  </small>
+  <hr>
+  <%= link_to 'Back', restaurants_path %> |
+  <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+</div>

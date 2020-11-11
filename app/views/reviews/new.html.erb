@@ -1,0 +1,13 @@
+<div class="container">
+  <h2>Add a review</h2>
+  <%= form_for [@restaurant, @review] do |f| %>
+    <div><%= f.label :rating %></div>
+    <div><%= f.number_field :rating %></div>
+    <div><%= f.label :content %></div>
+    <div><%= f.text_field :content %></div>
+    <div><%= f.submit %></div>
+  <% end %>
+  <br>
+  <%= link_to 'Back', restaurants_path %> |
+  <%# <%= link_to 'Edit', edit_restaurant_path(@restaurant) %>
+</div>
